@@ -5,7 +5,7 @@ Aikaa meni noin 1h 20min plus deploy noin 15min.
 
 ## Missä nään sivut?
 
-Live versio:
+Live versio: https://julkeexlempee.rantarepo.workers.dev/
 
 ### Omalla koneella
 

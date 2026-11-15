@@ -1,0 +1,78 @@
+<footer class="site-footer">
+	<a class="footer-name" href="#esittely">Teemu Aitomeri<span>© 2026</span></a>
+	<nav aria-label="Alatunnisteen navigaatio">
+		<a href="#esittely">Esittely</a>
+		<a href="#kokemus">Kokemus</a>
+		<a href="#miksi-teille">Miksi teille</a>
+	</nav>
+	<a class="back-top" href="#esittely">Takaisin ylös <span aria-hidden="true">↑</span></a>
+</footer>
+
+<style>
+	.site-footer {
+		display: grid;
+		grid-template-columns: 1fr auto 1fr;
+		align-items: center;
+		gap: 2rem;
+		padding: 1.6rem var(--gutter);
+		color: #fff;
+		background: var(--blue-dark);
+	}
+
+	.footer-name,
+	.back-top,
+	nav a {
+		font-family: var(--body);
+		font-size: 0.67rem;
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	.footer-name {
+		width: fit-content;
+	}
+
+	.footer-name span {
+		margin-left: 0.65rem;
+		color: #fff;
+		font-size: 0.58rem;
+	}
+
+	nav {
+		display: flex;
+		gap: clamp(1rem, 3vw, 2.5rem);
+	}
+
+	nav a:hover,
+	.back-top:hover {
+		color: var(--peach);
+	}
+
+	.back-top {
+		justify-self: end;
+	}
+
+	.back-top span {
+		margin-left: 0.6rem;
+		color: var(--peach);
+	}
+
+	@media (max-width: 700px) {
+		.site-footer {
+			grid-template-columns: 1fr auto;
+			gap: 1.4rem 1rem;
+		}
+
+		nav {
+			grid-column: 1 / -1;
+			grid-row: 2;
+			justify-content: space-between;
+		}
+
+		nav a,
+		.back-top,
+		.footer-name {
+			font-size: 0.62rem;
+		}
+	}
+</style>

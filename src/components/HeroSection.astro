@@ -1,0 +1,286 @@
+---
+import { Picture } from 'astro:assets';
+import portrait from '../assets/minaw.webp';
+---
+
+<section class="hero" id="esittely" aria-labelledby="hero-title">
+	<div class="hero-meta"><span>Hakemus / 2026</span><span>Julkee x Lempee</span></div>
+	<div class="hero-layout">
+		<div class="hero-copy">
+			<p class="eyebrow"><span class="dot"></span> Terve, tässä on</p>
+			<h1 id="hero-title">Teemu<br /><span>Aitomeri</span></h1>
+			<div class="intro-row">
+				<p class="intro">Olen nopeasti oppiva fullstack-tyyppi, joka ei pelkää haasteita ja osaa ottaa ne isoimmatkin haasteet rennosti ja ilman häsläystä.</p>
+				<a class="scroll-cue" href="#kokemus" aria-label="Siirry kokemukseen"><span>Vieritä alas</span><b aria-hidden="true">↓</b></a>
+			</div>
+		</div>
+		<figure class="portrait">
+			<Picture
+				src={portrait}
+				alt="Minä"
+				widths={[320, 480, 640, 768, 960]}
+				sizes="(max-width: 700px) min(19rem, calc(68vw - 27px)), 24rem"
+				formats={['avif', 'webp']}
+				fallbackFormat="webp"
+				loading="eager"
+				fetchpriority="high"
+			/>
+			<figcaption><span>Teemu Aitomeri</span><span>01 / 01</span></figcaption>
+		</figure>
+	</div>
+	<div class="hero-stamp" aria-hidden="true">01<br /><span>—</span><br />03</div>
+	<div class="hero-bottom"><span>Oma tarina, omin sanoin.</span><span>↓</span></div>
+</section>
+
+<style>
+	.hero {
+		position: relative;
+		display: flex;
+		min-height: min(850px, 100svh);
+		flex-direction: column;
+		justify-content: center;
+		overflow: hidden;
+		padding: 9rem var(--gutter) 5rem;
+		color: #fff;
+		background: var(--blue);
+	}
+
+	.hero::after {
+		position: absolute;
+		right: -8rem;
+		bottom: 2rem;
+		width: min(47vw, 39rem);
+		aspect-ratio: 1;
+		border: 1px solid rgb(255 255 255 / 18%);
+		border-radius: 50%;
+		content: '';
+		pointer-events: none;
+	}
+
+	.hero-meta,
+	.hero-bottom {
+		position: absolute;
+		right: var(--gutter);
+		left: var(--gutter);
+		display: flex;
+		justify-content: space-between;
+		font-family: var(--body);
+		font-size: 0.65rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.hero-meta {
+		top: 7rem;
+	}
+
+	.hero-copy {
+		position: relative;
+		z-index: 1;
+		min-width: 0;
+	}
+
+	.hero-layout {
+		position: relative;
+		z-index: 1;
+		display: grid;
+		width: min(100%, 82rem);
+		grid-template-columns: minmax(0, 1fr) minmax(15rem, 24rem);
+		align-items: center;
+		gap: clamp(2rem, 5vw, 5rem);
+		margin: 0 auto;
+	}
+
+	.portrait {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		margin: 0;
+		padding: 0.55rem;
+		background: var(--peach);
+		transform: rotate(2deg);
+	}
+
+	.portrait img {
+		display: block;
+		width: 100%;
+		max-height: min(56vh, 36rem);
+		aspect-ratio: 0.78;
+		object-fit: cover;
+		object-position: center 45%;
+	}
+
+	.portrait figcaption {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		padding: 0.7rem 0.25rem 0.15rem;
+		color: #000;
+		font-family: var(--body);
+		font-size: 0.62rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.eyebrow {
+		display: flex;
+		align-items: center;
+		gap: 0.7rem;
+		margin: 0 0 1rem;
+		font-family: var(--body);
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.dot {
+		width: 0.48rem;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		background: var(--peach);
+	}
+
+	h1 {
+		margin: 0;
+		font-family: var(--display);
+		font-size: clamp(4.8rem, 11.5vw, 10.5rem);
+		font-weight: 800;
+		letter-spacing: -0.095em;
+		line-height: 0.76;
+	}
+
+	h1 span {
+		padding: 0 0.08em;
+		color: #000;
+		background: var(--peach);
+	}
+
+	.intro-row {
+		display: flex;
+		align-items: end;
+		justify-content: space-between;
+		gap: 2rem;
+		margin-top: clamp(2.5rem, 6vw, 5.5rem);
+	}
+
+	.intro {
+		max-width: 29rem;
+		margin: 0;
+		font-family: var(--body);
+		font-size: clamp(1rem, 1.5vw, 1.25rem);
+		line-height: 1.55;
+	}
+
+	.scroll-cue {
+		display: flex;
+		align-items: center;
+		gap: 1.25rem;
+		font-family: var(--body);
+		font-size: 0.68rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+	.scroll-cue b {
+		display: grid;
+		width: 2.8rem;
+		aspect-ratio: 1;
+		place-items: center;
+		border: 1px solid rgb(255 255 255 / 55%);
+		border-radius: 50%;
+		font-size: 1.2rem;
+		font-weight: 400;
+	}
+
+	.scroll-cue:hover b {
+		color: var(--ink);
+		background: var(--peach);
+		border-color: var(--peach);
+	}
+
+	.hero-stamp {
+		position: absolute;
+		z-index: 1;
+		right: 8%;
+		top: 48%;
+		color: #fff;
+		font-family: var(--body);
+		font-size: 0.62rem;
+		font-weight: 600;
+		line-height: 2;
+		text-align: center;
+	}
+
+	.hero-stamp span {
+		color: #fff;
+	}
+
+	.hero-bottom {
+		bottom: 1.8rem;
+	}
+
+	@media (max-width: 700px) {
+		.hero {
+			min-height: 100svh;
+			padding-top: 10rem;
+			padding-bottom: 5rem;
+		}
+
+		.hero-meta {
+			top: 8.3rem;
+		}
+
+		h1 {
+			font-size: clamp(4.5rem, 17vw, 7.5rem);
+		}
+
+		.hero-layout {
+			grid-template-columns: 1fr;
+			gap: 3rem;
+		}
+
+		.portrait {
+			width: min(68%, 19rem);
+			margin-left: auto;
+		}
+
+		.portrait img {
+			max-height: 56vh;
+		}
+
+		.intro-row {
+			align-items: start;
+		}
+
+		.scroll-cue {
+			flex-direction: column-reverse;
+			gap: 0.5rem;
+		}
+
+		.scroll-cue span {
+			writing-mode: vertical-rl;
+		}
+
+		.hero-stamp {
+			top: auto;
+			right: var(--gutter);
+			bottom: 7rem;
+		}
+	}
+
+	@media (max-width: 420px) {
+		.hero-meta,
+		.hero-bottom {
+			font-size: 0.56rem;
+		}
+
+		.intro-row {
+			gap: 1rem;
+		}
+	}
+</style>

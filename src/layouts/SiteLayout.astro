@@ -1,0 +1,102 @@
+---
+const { title = 'Teemu Aitomeri — hakemus', description = 'Teemu Aitomerin verkkosivumuotoinen hakemus.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fi">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#2446ff" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<a class="skip-link" href="#main">Siirry sisältöön</a>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		font-family: 'Arial Narrow', 'Helvetica Neue', sans-serif;
+		color: #fff;
+		background: #2446ff;
+		font-synthesis: none;
+		text-rendering: optimizeLegibility;
+		--blue: #2446ff;
+		--blue-deep: #162cb0;
+		--blue-dark: #101d70;
+		--blue-soft: #526dff;
+		--peach: #ffc49e;
+		--peach-deep: #f5aa7c;
+		--ink: #000;
+		--paper: #fff;
+		--gutter: clamp(1.25rem, 5vw, 5.5rem);
+		--display: 'Arial Narrow', 'Helvetica Neue', sans-serif;
+		--body: 'Helvetica Neue', Arial, sans-serif;
+		font-optical-sizing: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+		scroll-padding-top: 6rem;
+	}
+
+	body {
+		min-width: 320px;
+		margin: 0;
+	}
+
+	button,
+	a {
+		color: inherit;
+	}
+
+	a {
+		text-underline-offset: 0.25em;
+	}
+
+	:focus-visible {
+		outline: 3px solid var(--peach);
+		outline-offset: 5px;
+	}
+
+	::selection {
+		color: var(--ink);
+		background: var(--peach);
+	}
+
+	.skip-link {
+		position: fixed;
+		z-index: 10;
+		top: 0.75rem;
+		left: 0.75rem;
+		transform: translateY(-160%);
+		padding: 0.75rem 1rem;
+		color: var(--ink);
+		background: var(--peach);
+	}
+
+	.skip-link:focus {
+		transform: translateY(0);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		*,
+		*::before,
+		*::after {
+			scroll-behavior: auto !important;
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+		}
+	}
+</style>

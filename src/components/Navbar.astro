@@ -1,0 +1,102 @@
+<header class="site-header">
+	<a class="wordmark" href="#esittely" aria-label="Etusivulle, Teemu Aitomeri">T/A<span>®</span></a>
+	<nav aria-label="Päänavigaatio">
+		<a href="#esittely"><span>01</span> Esittely</a>
+		<a href="#kokemus"><span>02</span> Kokemus</a>
+		<a href="#miksi-teille"><span>03</span> Miksi teille</a>
+	</nav>
+	<a class="contact-link" href="#miksi-teille">Tutustu <span aria-hidden="true">↘</span></a>
+</header>
+
+<style>
+	.site-header {
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		display: grid;
+		width: 100%;
+		grid-template-columns: 1fr auto 1fr;
+		align-items: center;
+		gap: 2rem;
+		padding: 1.5rem var(--gutter);
+		color: #fff;
+	}
+
+	.wordmark {
+		width: fit-content;
+		font-family: var(--display);
+		font-size: 1.2rem;
+		font-weight: 800;
+		letter-spacing: -0.08em;
+		text-decoration: none;
+	}
+
+	.wordmark span {
+		margin-left: 0.25rem;
+		font-family: var(--body);
+		font-size: 0.5rem;
+		vertical-align: top;
+	}
+
+	nav {
+		display: flex;
+		gap: clamp(1rem, 3vw, 3rem);
+	}
+
+	nav a,
+	.contact-link {
+		font-family: var(--body);
+		font-size: 0.7rem;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+		text-decoration: none;
+	}
+
+	nav a span {
+		margin-right: 0.35rem;
+		color: #fff;
+		font-size: 0.6rem;
+	}
+
+	nav a:hover,
+	.contact-link:hover {
+		color: var(--peach);
+	}
+
+	.contact-link {
+		justify-self: end;
+		padding: 0.7rem 0.9rem;
+		border: 1px solid rgb(255 255 255 / 45%);
+	}
+
+	.contact-link span {
+		margin-left: 0.55rem;
+		color: var(--peach);
+	}
+
+	@media (max-width: 700px) {
+		.site-header {
+			grid-template-columns: 1fr auto;
+			gap: 1rem;
+			padding-top: 1.15rem;
+		}
+
+		nav {
+			grid-column: 1 / -1;
+			grid-row: 2;
+			justify-content: space-between;
+			gap: 0.75rem;
+		}
+
+		nav a {
+			font-size: 0.65rem;
+		}
+
+		.contact-link {
+			grid-column: 2;
+			grid-row: 1;
+			padding: 0.55rem 0.7rem;
+		}
+	}
+</style>

@@ -1,0 +1,141 @@
+<section class="why section" id="miksi-teille" aria-labelledby="why-title">
+	<div class="section-top"><span>03 / Suunta</span><span>Seuraava luku</span></div>
+	<div class="why-layout">
+		<div class="why-heading">
+			<p class="eyebrow">Miksi juuri teille</p>
+			<h2 id="why-title">Paikka jossa<br />ei olla <em>liian</em><br />jäykkiä.</h2>
+		</div>
+		<div class="why-copy">
+			<span class="asterisk" aria-hidden="true">✳</span>
+			<p>Minusta saatte sitoutuneen ja hyväntuulisen kollegan, joka ottaa kaikki huomioon ja on oikeasti kiinnostunut muiden tekemisistä. Autan tottakai muita, jos vaan tietotaitoa löytyy ja täsmällisyys on myös yksi hyveitäni. Kaikkia työhakemuskliseitä en jaksa luetella, mutta olen tottakai sosiaalinen kun tilanne sitä vaatii. Mutta en loputtomiin jaksa tyhjänpäiväsiä horista, mielummin painaa hommia.</p>
+			<p>Vapaa-aikani menee totaalisesti tollasen vähän vajaan 1,5v tytön kanssa koti-isänä puuhaillessa. Yritän toki tehdä omia koodausjuttujani myös jos jostain aikaa löytyy. Mutta jotkut jutut on vain tärkeämpiä kuin toiset.</p>
+		</div>
+	</div>
+	<div class="why-note">Kiitos ajastanne.<span>— T/A</span></div>
+</section>
+
+<style>
+	.section {
+		position: relative;
+		min-height: 740px;
+		overflow: hidden;
+		padding: 2rem var(--gutter) 2rem;
+	}
+
+	.why {
+		color: #fff;
+		background: var(--blue-deep);
+	}
+
+	.section-top {
+		display: flex;
+		justify-content: space-between;
+		font-family: var(--body);
+		font-size: 0.65rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.why-layout {
+		display: grid;
+		width: min(100%, 73rem);
+		grid-template-columns: minmax(0, 1fr);
+		gap: 3rem;
+		margin: clamp(5rem, 10vh, 8rem) auto 0;
+	}
+
+	.eyebrow {
+		margin: 0 0 1.25rem;
+		color: #fff;
+		font-family: var(--body);
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+
+	h2 {
+		margin: 0;
+		font-family: var(--display);
+		font-size: clamp(4.1rem, 9vw, 8.25rem);
+		font-weight: 800;
+		letter-spacing: -0.09em;
+		line-height: 0.8;
+	}
+
+	h2 em {
+		padding: 0 0.08em;
+		color: #000;
+		background: var(--peach);
+		font-style: normal;
+	}
+
+	.why-copy {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		align-items: start;
+		column-gap: clamp(1.5rem, 5vw, 5rem);
+		row-gap: 0.75rem;
+		font-family: var(--body);
+	}
+
+	.asterisk {
+		grid-column: 1 / -1;
+		margin-bottom: 0.25rem;
+		color: #fff;
+		font-size: 2.5rem;
+	}
+
+	.why-copy p {
+		margin: 0;
+		padding-top: 1rem;
+		border-top: 1px solid rgb(255 255 255 / 35%);
+		font-size: 0.92rem;
+		line-height: 1.75;
+	}
+
+	.why-note {
+		width: min(100%, 73rem);
+		display: flex;
+		justify-content: space-between;
+		margin: 4rem auto 0;
+		padding-top: 1rem;
+		border-top: 1px solid rgb(255 255 255 / 35%);
+		font-family: var(--body);
+		font-size: 0.7rem;
+	}
+
+	.why-note span {
+		color: var(--peach);
+	}
+
+	@media (max-width: 700px) {
+		.section {
+			min-height: 0;
+			padding-bottom: 7rem;
+		}
+
+		.why-layout {
+			gap: 2.5rem;
+			margin-top: 5rem;
+		}
+
+		h2 {
+			font-size: clamp(3.8rem, 16vw, 6.5rem);
+		}
+
+		.why-copy {
+			grid-template-columns: 1fr;
+			row-gap: 1.25rem;
+		}
+
+		.asterisk {
+			grid-column: 1;
+		}
+
+		.why-note {
+			margin-top: 3rem;
+		}
+	}
+</style>

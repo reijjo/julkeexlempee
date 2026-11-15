@@ -10,7 +10,7 @@ Live versio: https://julkeexlempee.rantarepo.workers.dev/
 ### Omalla koneella
 
 - Kloonaa repo
-- Terminaalissa `bun run install` ja `bun run dev`
+- Terminaalissa `bun install` ja `bun run dev`
 - Selaimella -> `http://localhost:4321/`
 
 ## Cloudflare Workers
